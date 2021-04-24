@@ -1,0 +1,17 @@
+<svg:rect 
+class="box-{{box.id}}"
+[ngClass]="{'disabled':  disabled}"
+[attr.x]="box.x" 
+[attr.y]="box.y" 
+[attr.width]="box.width" 
+[attr.height]="box.height"
+[ngStyle]="{'z-index': box.id}"
+(keydown)="keyDownHandler($event)"
+(focus)="onFocus()"
+/>
+
+<svg:text *ngIf="!disabled" 
+[attr.x]="box.textPosX" 
+[attr.y]="box.textPosY"
+[ngStyle]="{'z-index': box.id}" 
+fill="black" >{{box.id}}</svg:text>

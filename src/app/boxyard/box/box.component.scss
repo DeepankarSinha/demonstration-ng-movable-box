@@ -1,0 +1,16 @@
+rect {
+    fill:rgb(255, 255, 255);
+    stroke-width: 1;
+    stroke:rgb(0,0,0);
+    outline: none;
+}
+
+rect:not(.disabled):focus {
+    stroke-width: 2;
+    stroke:rgb(6, 22, 250)
+}
+
+.disabled {
+    stroke-width: 1;
+    stroke:rgb(132, 248, 147)
+}

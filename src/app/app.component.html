@@ -1,0 +1,59 @@
+<div class="float-left">
+    <boxyard #boxyard
+    [width]="boxyardWidth"
+    [height]="boxyardHeight"
+    [speed]="3"
+    [disableKeyboardControl]="isKeyboardControlDisabled"></boxyard>
+</div>
+<div class="float-right box-config-container">
+    <div class="m-10">
+        <div>
+            <p>----------------BOX CONFIG----------------</p>
+        </div>
+        <div class="mt-10">
+            <label for="collision-x" >x:</label>
+        </div>
+        <div>
+            <input placeholder="x" name="collision-x" type="number" [(ngModel)]="newBox.x"/>
+        </div>
+        <div class="mt-10">
+            <label for="collision-y" >y:</label>
+        </div>
+        <div>
+            <input placeholder="y" name="collision-y" type="number" [(ngModel)]="newBox.y"/>
+        </div>
+        <div class="mt-10">
+            <label for="collision-w" >width:</label>
+        </div>
+        <div>
+            <input placeholder="width" name="collision-w" type="number" [(ngModel)]="newBox.width"/>
+        </div>
+        <div class="mt-10">
+            <label for="collision-h" >height:</label>
+        </div>
+        <div>
+            <input placeholder="height" name="collision-h" type="number" [(ngModel)]="newBox.height"/>
+        </div>
+    </div>
+
+    <div class="m-10">
+        <button (click)="addNewBox()">Add box</button>
+    </div>
+    <div class="m-10">
+        <button (click)="addCollisionBox()">Add collision box</button>
+    </div>
+    <div class="m-10">
+        <button (click)="toggleKeyboardControl()">{{isKeyboardControlDisabled ? 'Enable' : 'Disable'}} keyboard control</button>
+    </div>
+    <div class="m-10">
+        <button (click)="toggleCollisionBox()">Toggle Collision Box Visibility</button>
+    </div>
+
+    <div>
+        <h5>Instructions:
+            <p>Click a movable box to highlight.</p>
+            <p>Use W, A, S and D to move the box.</p>
+            <p>Use delete key to remove the box.</p>
+        </h5>
+    </div>
+</div>

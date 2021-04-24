@@ -1,0 +1,13 @@
+<svg [attr.width]="width" [attr.height]="height">
+    <g box-g *ngFor="let box of boxes" 
+    [box]="box" 
+    (box)="box" 
+    [speed]="speed" 
+    [disableKeyboardControl]="disableKeyboardControl"
+    (remove)="removeBox($event)">
+</g>
+    
+    <ng-container *ngIf="isCollisionBoxVisible">
+        <g box-g *ngFor="let box of simpleCollisionService.getCollisionBoxes()" [box]="box" (box)="box" [disabled]="true"/>
+    </ng-container>
+</svg>
